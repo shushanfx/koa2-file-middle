@@ -1,0 +1,29 @@
+{
+  "name": "koa2-file-middle",
+  "version": "1.0.0",
+  "description": "Static file middle for koa2.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shushanfx/koa2-file-middle.git"
+  },
+  "keywords": [
+    "static",
+    "file",
+    "koa2"
+  ],
+  "author": "shushanfx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shushanfx/koa2-file-middle/issues"
+  },
+  "homepage": "https://github.com/shushanfx/koa2-file-middle#readme",
+  "dependencies": {
+    "debug": "^3.0.1",
+    "file-system": "^2.2.2",
+    "koa-send": "^4.1.0"
+  }
+}
