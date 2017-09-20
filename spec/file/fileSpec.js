@@ -3,12 +3,12 @@ var fileSystem = require("file-system");
 describe("Read file recursively.", function(){
 	it("test01", function(){
 		fileSystem.recurseSync("./node_modules", function(filepath, relative, filename){
-			console.info(filepath, relative, filename);
+			// console.info(filepath, relative, filename);
 		});
 	});
 
 	it("test02", function(){
-		console.info(loadCache("./node_modules"));
+		 // console.info(loadCache("./node_modules"));
 	});
 });
 
