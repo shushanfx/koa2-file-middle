@@ -1,6 +1,7 @@
 var koa = require("koa");
 var koa2FileMiddle = require("../../lib/index.js");
 var request = require("supertest");
+var fs = require("fs");
 
 
 describe("Make a https test.", function(){
@@ -12,7 +13,8 @@ describe("Make a https test.", function(){
 			cached: true,
 			lastModified:true,
 			etag: true,
-			debug: false
+			debug: false,
+			maxAge: 300
 		}));
 		requestAPI = request(k.listen());
 	});
@@ -30,11 +32,17 @@ describe("Make a https test.", function(){
 	});
 
 	it("Test last modified", function(done){
+		let stat = fs.statSync("./tsconfig.json");
+		let dt = stat.mtime.toGMTString();
+
 		return requestAPI.get("/tsconfig.json")
 			.set("Accept", "application/json")
-			.set("If-Modified-Since", "Tue, 12 Sep 2017 10:10:21 GMT")
+			.set("If-Modified-Since", dt)
 			.expect(304)
 			.end((err, response) => {
+				if(err){
+					throw err;
+				}
 				console.dir(response.header);
 				console.info(response.status);
 				done();
