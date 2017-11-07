@@ -1,6 +1,6 @@
 {
   "name": "koa2-file-middle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Static file middle for koa2.",
   "main": "./lib/index.js",
   "scripts": {
@@ -28,7 +28,6 @@
     "mz": "^2.6.0"
   },
   "devDependencies": {
-    "dateformat": "^2.0.0",
     "koa": "^2.3.0",
     "supertest": "^3.0.0"
   }
