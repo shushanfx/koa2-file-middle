@@ -10,7 +10,7 @@ describe("Make a https test.", function(){
 	beforeAll(function(){
 		var k = new koa();
 		k.use(koa2FileMiddle(["./spec", "./"], {
-			cached: true,
+			cache: true,
 			lastModified:true,
 			etag: true,
 			debug: false,
